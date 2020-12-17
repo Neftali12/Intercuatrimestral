@@ -23,12 +23,13 @@ app.get('/empleado', function(req, res) {
 
             res.json({
                 ok: true,
-                msg: 'Lista de empleados obtenida con exito'
+                msg: 'Lista de empleados obtenida con exito',
+                empleados
             });
         });
 });
 
-app.get('/usuario/:id', function(req, res) {
+app.get('/empleado/:id', function(req, res) {
     let idEmpleado = req.params.id;
 
     Empleado.findById({ _id: idEmpleado })

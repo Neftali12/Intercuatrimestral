@@ -14,8 +14,8 @@ app.get('/', function(req, res) {
 });
 
 app.use(require('./routes/usuario'));
-app.use(require('./routes/empleado'));
 app.use(require('./routes/departamento'));
+app.use(require('./routes/empleado'));
 
 mongoose.connect('mongodb://localhost:27017/inter', {
     useNewUrlParser: true,

@@ -1,6 +1,6 @@
 const express = require('express');
 const _ = require('underscore');
-const Departamento = requiere('../models/departamento');
+const Departamento = require('../models/departamento');
 const app = express();
 
 app.get('/departamento', function(req, res) {
@@ -45,6 +45,7 @@ app.get('/departamento/:id', function(req, res) {
             res.json({
                 ok: true,
                 msg: 'Departamentos listados con exito',
+                conteo: departamentos.length,
                 departamentos
             });
         });
