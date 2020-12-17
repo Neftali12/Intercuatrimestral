@@ -53,8 +53,8 @@ app.post('/usuario', function(req, res) {
     let body = req.body;
     let usr = new Usuario({
         nombre: body.nombre,
-        primer_apellido: body.primerApellido,
-        segundo_apellido: body.segundoApellido,
+        primer_apellido: body.primer_apellido,
+        segundo_apellido: body.segundo_apellido,
         edad: body.edad,
         curp: body.curp,
         telefono: body.telefono,
@@ -111,7 +111,6 @@ app.delete('/usuario/:id', function(req, res) {
                     ok: false,
                     msg: 'Ocurrio un erro al momento de eliminar',
                     err
-
                 });
             }
             res.json({
