@@ -1,8 +1,10 @@
-const express = require('express')
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const app = express()
 
 app.get('/', function(req, res) {
-    res.send('<h1> B I E N V E N I D O </h1>')
+    res.send('<h1> Bienvenido a mi INTERCUATRIMESTRAL </h1>')
 });
 
 app.get('/usuario', function(req, res) {
