@@ -2,7 +2,7 @@ require('./config/config')
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const app = express()
+const app = express();
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,10 +14,10 @@ app.get('/', function(req, res) {
 });
 
 app.use(require('./routes/usuario'));
-app.use(require('./routes/empleado'));
-app.use(require('./routes/departamento'));
+// app.use(require('./routes/empleado'));
+// app.use(require('./routes/departamento'));
 
-mongoose.connect('mongodb://locahlhost:27017/inter', {
+mongoose.connect('mongodb://localhost:27017/inter', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
