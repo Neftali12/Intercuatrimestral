@@ -110,7 +110,7 @@ app.delete('/usuario/:id', function(req, res) {
                 return res.status(400).json({
                     ok: false,
                     msg: 'Ocurrio un erro al momento de eliminar',
-                    er
+                    err
 
                 });
             }
