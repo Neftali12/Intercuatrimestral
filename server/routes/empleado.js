@@ -10,8 +10,8 @@ app.get('/empleado', function(req, res) {
     Empleado.find({ activo: true })
         .skip(Number(desde))
         .limit(Number(hasta))
-        .populate('usuario', 'nombre curp')
-        .populate('departamento', 'nombre')
+        .populate('usuario', 'nombre, primer_apellido, segundo_apellido')
+        .populate('departamento', 'nombre, numero_empleados, extension_telefonica')
         .exec((err, empleados) => {
             if (err) {
                 return res.status(400).json({
@@ -32,8 +32,8 @@ app.get('/usuario/:id', function(req, res) {
     let idEmpleado = req.params.id;
 
     Empleado.findById({ _id: idEmpleado })
-        .populate('usuario', 'nombre curp')
-        .populate('departamento', 'nombre')
+        .populate('usuario', 'nombre, primer_apellido, segundo_apellido')
+        .populate('departamento', 'nombre, numero_empleados, extension_telefonica')
         .exec((err, empleados) => {
             if (err) {
                 return res.status(400).json({
@@ -45,7 +45,7 @@ app.get('/usuario/:id', function(req, res) {
 
             res.json({
                 ok: true,
-                msg: 'Lista de empleados obtenida con exito',
+                msg: 'Empleados listados con exito',
                 conteo: empleados.length,
                 empleados
             });

@@ -43,7 +43,7 @@ app.get('/usuario/:id', function(req, res) {
 
             res.json({
                 ok: true,
-                msg: 'Usuario obtenido con exito',
+                msg: 'Usuarios listados con exito',
                 usuarios
             });
         });
